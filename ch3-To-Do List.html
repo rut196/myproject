@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        body {
+            font-family: Tahoma, sans-serif;
+            max-width: 500px;
+            margin: 20px auto;
+        }
+
+        input {
+            padding: 8px;
+            width: 70%;
+        }
+
+        .task {
+            color: green;
+        }
+
+        button {
+            padding: 8px 12px;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>สิ่งที่ต้องทำ (To-Do List)</h2>
+    <!-- ช่องรับข้อความ และปุ ่มเพิ่มงาน -->
+    <input type="text" id="taskInput" placeholder="เพิ่มงานที่ต้องทำ">
+    <button onclick="addTask()">เพิ่ม</button>
+    <!-- รายการงานจะแสดงใน list นี ้ -->
+    <ul id="taskList"></ul>
+    <script>
+        // สร้างอาร์เรย์เพื ่อเก็บรายการงาน 
+        const tasks = [];
+        // อ้างอิง element ul ที ่จะใช้แสดงรายการ 
+        const list = document.getElementById("taskList");
+        // ฟังก์ชันเมื ่อกดปุ ่ม "เพิ่ม" 
+        function addTask() {
+            const taskInput = document.getElementById("taskInput")
+            const task = taskInput.value.trim(); // เอาค่าและตัดช่องว่าง 
+            // ถ้าไม่ใส่ข้อความ ไม่ให้เพิ่มเข้า list 
+            if (task === "") {
+                alert("กรุณากรอกงานที่ต้องทำ");
+                return;
+            }
+            tasks.push(task); // เพิ่มงานใหม่เข้าอาร์เรย์ 
+            updateList();     // เรียกฟังก์ชันแสดงผลใหม่ 
+            taskInput.value = ""; // เคลียร์ input หลังเพิ่ม 
+        }
+        // ฟังก์ชันแสดงรายการทั ้งหมดใน list 
+        function updateList() {
+            list.innerHTML = ""; // ล้างรายการเก่าก่อน 
+            // วนลูปอาร์เรย์ แล้วสร้าง <li> ส าหรับแต่ละรายการ 
+            tasks.forEach((t, index) => {
+                const li = document.createElement("li");
+                li.textContent = `${index + 1}. ${t}`;
+                li.classList.add("task")
+                list.appendChild(li);
+            });
+        } 
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+     <h1 style="color: red;">การใช้ if-else</h1>
+    <script>
+        let scoreInput = prompt("กรอกคะแนนของคุณ (1-100):");
+        let score = parseFloat(scoreInput);
+        if (!isNaN(score) && score >= 0 && score <= 100) {
+            if (score >= 80) {
+                document.write(`<h1 style="color : green;"> คุณสอบได้เกรด A ด้วยคะแนน ${score} คะแนน</h1>`);
+                console.log(`สอบผ่าน: ${score} คะแนน`);
+                alert("grad A");
+            } else if (score >= 70) {
+                document.write(`<h1 style="color : green;"> คุณสอบได้เกรด B ด้วยคะแนน ${score} คะแนน</h1>`);
+                console.log(`สอบผ่าน: ${score} คะแนน`);
+                alert("grad B");
+            } else if (score >= 60) {
+                document.write(`<h1 style="color : green;"> คุณสอบได้เกรด C ด้วยคะแนน ${score} คะแนน</h1>`);
+                console.log(`สอบผ่าน: ${score} คะแนน`);
+                alert("grad C")
+            } else if (score >= 50) {
+                document.write(`<h1 style="color : green;"> คุณสอบได้เกรด D ด้วยคะแนน ${score} คะแนน</h1>`);
+                console.log(`สอบผ่าน: ${score} คะแนน`);
+                alert("grad D")
+            } else {
+                document.write(`<h1 style="color : red;"> คุณสอบไม่ผ่าน ด้วยคะแนน ${score} คะแนน</h1>`);
+                document.write(`<h1 style="color: red; font-size: 100px;">คุณไม่ผ่าน</h1>`);
+                console.log(`สอบไม่ผ่าน: ${score} คะแนน`);
+                alert("grad F")
+            }
+        }
+        else {
+            document.write(`<h1 style="color: blue;">กรุณากรอกคะแนนที่ถูกต้อง (0 - 100)</h1>`);
+            console.log(`ข้อมูลไม่ถูกต้อง`);
+            alert("ข้อมูลไม่ถูกต้อง")
+        }
+    </script>
+</body>
+
+</html>

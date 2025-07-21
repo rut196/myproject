@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>แบบฝึกหัด: เมนูเลือกรายการ </h3>
+    <script>
+        let choice; // ตัวแปรเก็บเมนูที ่ผู้ใช้เลือก
+        let output = ""; // ตัวแปรเก็บข้อความที ่จะน าไปแสดง
+        do {
+            // แสดงเมนูให้ผู้ใช้เลือก
+            choice = prompt("กรุณาเลือกเมนู:\n1. แสดงชื่อ\n2. แสดงอายุ\n3. แสดงอาชีพ\n4. ออกจากโปรแกรม" );
+ switch (choice) {
+                case "1":
+                    output += "<p>ชื่อของคุณคือ: อนิรุต ลอแม</p>";
+                    break;
+                case "2":
+                    output += "<p>อายุของคุณคือ: 21 ปี</p>";
+                    break;
+                case "3":
+                    output += "<p>อาชีพของคุณคือ: นักศึกษา</p>";
+                    break;
+                case "4":
+                    output += "<p style='color: red;'>คุณได้ออกจากโปรแกรมแล้ว</p>";
+                    break;
+                default:
+                    output += "<p style='color: gray;'>กรุณาเลือกเมนู 1-4 เทานน</p>";
+            }
+        } while (choice !== "4"); // ออกจากลูปเมื ่อเลือกเมนู 4
+        // แสดงผลลัพธ์บนหน้าเว็บ
+        document.write("<h2>ผลลัพธ์จากการเลือกเมนู:</h2>");
+        document.write(output);
+    </script>
+
+</body>
+
+</html>

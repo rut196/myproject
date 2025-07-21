@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>แบบฝึกหัด รับตัวเลขจาก prompt() แลวแสดงสตรคณของตวเลขนน </h3>
+    <script>
+        // รับค่าจากผู้ใช้ แล้วแปลงเป็นตัวเลข
+        const num = parseInt(prompt("กรุณากรอกเลขที่ต้องการแสดงสูตรคูณ:"));
+        // ตรวจสอบว่าผู้ใช้กรอกเลขจริงหรือไม่
+        if (!isNaN(num)) {
+            document.write(`<h2>สูตรคูณแม่ ${num}</h2>`);
+            // ใช้ for แสดงสูตรคูณจาก 1 ถึง 12
+            for (let i = 1;) {
+                document.write(`${num} x ${i} = ${num * i}<br>`);
+ }
+ } else {
+            document.write("<p style='color:red;'>กรุณากรอกตัวเลขที่ถูกต้อง</p>");
+        }
+    </script>
+</body>
+
+</html>

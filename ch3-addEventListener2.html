@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>แบบฝึกหัด addEventListener</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>แบบฝึกหัด addEventListener()</h2>
+    <h3>แบบฝึกหัดที่ 1: สร้างปุ่ม 3 ปุ่มให้แสดงคำต่างกัน</h3>
+
+    <button id="btn1">คำถามข้อที่ 1</button>
+    <button id="btn2">คำถามข้อที่ 2</button>
+    <button id="btn3">คำถามข้อที่ 3</button>
+
+    <p id="result"></p>
+  </div>
+
+  <script>
+    const result = document.getElementById("result");
+
+    document.getElementById("btn1").addEventListener("click", function() {
+      result.innerHTML = "คุณคลิกข้อที่ 1 ! 🎉";
+    });
+
+    document.getElementById("btn2").addEventListener("click", function() {
+      result.innerHTML = "คุณคลิกข้อที่ 2 ! 🌸";
+    });
+
+    document.getElementById("btn3").addEventListener("click", function() {
+      result.innerHTML = "คุณคลิกข้อที่ 3 ! 👑";
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 style="color: red;">การใช้ switch case</h1>
+    <script>
+        const scoreInput = prompt("กรุณากรอกคะแนน (0-100):");
+        const score = parseFloat(scoreInput);
+
+        if (!isNaN(score) && score >= 0 && score <= 100) {
+            let grad;
+            switch (true) {
+                case (score >= 80):
+                    grad = 'A';
+                    break;
+                case (score >= 70):
+                    grad = 'B';
+                    break;
+                case (score >= 60):
+                    grad = 'C';
+                    break;
+                case (score >= 50):
+                    grad = 'D';
+                    break;
+                default:
+                    grad = 'F';
+            }
+
+                    document.write(`<h1>คะแนนของคุณคือ ${score} ได้เกรด : <span style="color: blue;">${grad}</span></h1>`);
+                    console.log(`คุณได้เกรด : ${grad}`);
+
+            } else {
+                document.write(`<h1>กรุณากรอกคะแนนที่เป็นตัวเลขระหว่าง <span style="color: red;"> 0 ถึง 100</span></h1>`);
+                console.log(`ข้อมูลไม่ถูกต้อง`);
+
+            }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let input = prompt("พิมพ์ข้อความ(พิมพ์'จบ'เพื่อออก):");
+    let result ="";
+    while(input !== "จบ") {
+        result += input +" ";
+        input = prompt("พิมพ์ข้อความ(พิมพ์'จบ'เพื่อออก):")
+    }
+    document.write ("<h3>คุณได้ป้อนข้อความดังนี้ : </h3>");
+    document.write ("<p style='color: green; font-size: 18px;'>"+result+"</p>");
+</script>
+</body>
+</html>

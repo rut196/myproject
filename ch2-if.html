@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1 style="color: red;">การใช้ if version 1</h1>
-    <h1 style="color: pink;">การใช้ switch case</h1>
+    <h1 style="color: #FF1493;">การใช้ switch case</h1>
+    <script>
+        // รับค่าชื่อจากผู้ใช้ (string)
+        let scoreInput = prompt("กรุณาใส่คะแนนของคุณ:");
+        // รับค่าตัวเลขจากผู้ใช้ (number) โดยแปลงเป็นจ านวนทศนิยมด้วย parseFloat
+        let score = parseFloat(scoreInput);
+        //isNaN() ตรวจสอบว่า "ไม่ใช่ตัวเลข“
+        if (!isNaN(score) && score >= 50) {
+            console.log(`คุณสอบสอบผ่าน.... เก่งมาก...ด้วยคะแนน ${score} คะแนน`);
+            alert(`คุณสอบสอบผ่าน.... เก่งมาก...ด้วยคะแนน ${score} คะแนน`);
+            document.write(`<h2 style="color: green;">คุณสอบสอบผ่าน.... เก่งมาก...ด้วยคะแนน ${score} คะแนน </h2>`);
+        }
+
+    </script>
 </body>
+
 </html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบค้นหารายชื่อ</title>
+    <style>
+        body {
+            font-family: Tahoma, sans-serif;
+            max-width: 500px;
+            margin: 20px auto;
+        }
+
+        input {
+            padding: 8px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>ค้นหารายชื่อ</h2>
+    <!-- ช่อง input ส าหรับพิมพ์ค าค้น -->
+    <input type="text" id="search" placeholder="ค้นหาชื่อ...">
+    <!-- แสดงรายชื ่อที ่ตรงกับค าค้น -->
+    <ul id="namesList"></ul>
+    <script>
+        // อาร์เรย์ของรายชื ่อทั ้งหมด 
+        const names = ["นิด", "หน่อย", "ปอ", "ตั้ม", "เบียร์", "แน็ต", "ตาล"];
+        // อ้างอิง <ul> ที ่จะแสดงรายชื ่อ 
+        const list = document.getElementById("namesList");
+        // อ้างอิงช่อง input ค้นหา 
+        const searchBox = document.getElementById("search");
+        // ฟังก์ชันส าหรับแสดงรายการรายชื ่อจากอาร์เรย์ 
+        function renderList(filteredNames) {
+            list.innerHTML = ""; // ล้าง <ul> เดิมก่อนทุกครั ้ง 
+            // วนลูปชื ่อทั ้งหมดแล้วสร้าง <li> แสดงแต่ละชื ่อ 
+            filteredNames.forEach(name => {
+                const li = document.createElement("li");
+                li.textContent = name;
+                list.appendChild(li);
+            });
+        }
+        // เมื ่อผู ้ใช้พิมพ์ลงในช่องค้นหา จะกรองข้อมูลแบบ real-time 
+        searchBox.addEventListener("input", () => {
+            const keyword = searchBox.value.toLowerCase(); // แปลงเป็นตัวพิมพ์เล็ก 
+            const result = names.filter(n => n.toLowerCase().includes(keyword)); // กรองชื ่อที ่มีค าค้น 
+            renderList(result); // แสดงผลที ่กรองแล้ว 
+        });
+        // เรียกแสดงรายชื ่อทั ้งหมดเมื ่อโหลดหน้าเว็บ 
+        renderList(names); 
+    </script>
+</body>
+
+</html>

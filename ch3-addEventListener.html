@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>กิจกรรม JavaScript</title>
+    <!-- 🔗 เชื่อมกับไฟล์ CSS ภายนอก -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- 🔹 กิจกรรมที่ 1: คลิกปุ่มเพื่อแสดงข้อความ -->
+    <div class="section">
+        <h3>กิจกรรมที่ 1: คลิกปุ่มเพื่อแสดงข้อความ</h3>
+        <button id="showMessage">คลิกฉัน</button>
+        <p id="output1"></p>
+    </div>
+
+    <!-- 🔹 กิจกรรมที่ 2: เปลี่ยนสีพื้นหลังเมื่อชี้เมาส์ -->
+    <div class="section">
+        <h3>กิจกรรมที่ 2: เปลี่ยนสีพื้นหลังเมื่อชี้เมาส์</h3>
+        <div id="box"></div>
+        <p>ลองนำเมาส์มาวางที่กล่องด้านบน</p>
+    </div>
+
+    <!-- 🔹 กิจกรรมที่ 3: รับค่าจาก input แล้วแสดงผล -->
+    <div class="section">
+        <h3>กิจกรรมที่ 3: รับชื่อจากผู้ใช้</h3>
+        <input id="nameInput" placeholder="กรอกชื่อของคุณ">
+        <button id="submitBtn">แสดงชื่อ</button>
+        <p id="output2"></p>
+    </div>
+
+    <script>
+        // 👉 กิจกรรม 1
+        const btn1 = document.getElementById("showMessage");
+        const output1 = document.getElementById("output1");
+        btn1.addEventListener("click", function () {
+            output1.textContent = "คุณคลิกปุ่มแล้ว! 🎉";
+        });
+
+        // 👉 กิจกรรม 2
+        const box = document.getElementById("box");
+        box.addEventListener("mouseover", function () {
+            box.style.backgroundColor = "lightblue";
+        });
+        box.addEventListener("mouseout", function () {
+            box.style.backgroundColor = "lightgray";
+        });
+
+        // 👉 กิจกรรม 3
+        const nameInput = document.getElementById("nameInput");
+        const submitBtn = document.getElementById("submitBtn");
+        const output2 = document.getElementById("output2");
+        submitBtn.addEventListener("click", function () {
+            const name = nameInput.value.trim();
+            if (name) {
+                output2.textContent = `สวัสดีคุณ ${name} 😊`;
+            } else {
+                output2.textContent = "กรุณากรอกชื่อก่อน!";
+            }
+        });
+    </script>
+</body>
+
+</html>

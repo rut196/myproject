@@ -1,0 +1,25 @@
+<h3>ตัวอย่าง รับคะแนนนักเรียนและหยุดเมื่อใส่ค่าว่าง</h3>
+<script>
+    let total = 0; // ตัวแปรสะสมผลรวม
+    let count = 0; // ตัวแปรนับจ านวนนักเรียน
+    let score;
+    do {
+        // รับคะแนนจากผู้ใช้
+        score = prompt("กรุณากรอกคะแนนนักเรียน (กด OK โดยไม่กรอกเพื่อหยุด):");
+        console.log("score=", score); // ตรวจสอบค่า score
+        if (score !== "") {
+            // แปลงค่าที ่รับมาเป็นตัวเลขและสะสม
+            total += parseFloat(score);
+            count++;
+        }
+    } while (score !== ""); // หยุดเมื ่อผู้ใช้ไม่กรอกอะไรเลย
+    // แสดงผลลัพธ์บนหน้าเว็บ
+    if (count > 0) {
+        const average = total / count;
+        document.write(`<h3>คุณป้อนคะแนนทั้งหมด ${count} คน</h3>`);
+        document.write(`<p>รวมคะแนน: ${total}</p>`);
+        document.write(`<p>คะแนนเฉลี่ย: ${average.toFixed(2)}</p>`);
+    } else {
+        document.write("<p>ยังไม่มีการกรอกคะแนน</p>");
+    }
+</script>
